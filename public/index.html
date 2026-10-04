@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dine-O-Rama | Find your next meal</title>
+<link rel="icon" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="images/dino.png" alt="">Dine-O-Rama</a>
+    <div>
+      <a class="link on" href="index.html#home">Home</a>
+      <a class="link" href="index.html#restaurants">Restaurants</a>
+      <a class="link" href="admin.html">Admin</a>
+    </div>
+  </div>
+</nav>
+<div class="herowrap" id="home"><section class="hero">
+  <div>
+    <p class="eyebrow">Dine-O-Rama food court presents</p>
+    <h1>Find your next meal</h1>
+    <p class="tagline">Where every craving finds a table.</p>
+    <p class="lead">Search our food court by restaurant, cuisine or location.</p>
+    <form class="search" id="searchForm" role="search">
+      <input id="q" type="search" maxlength="50" placeholder="Try Filipino, grill, Angeles..." aria-label="Search restaurants">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="photo"><img src="images/logo.png" alt="Dine-O-Rama dinosaur mascot"></div>
+</section></div>
+<main id="restaurants">
+  <h2 id="heading">All restaurants</h2>
+  <div class="filters" aria-label="Filter restaurants">
+    <label>Cuisine
+      <select id="cuisineFilter">
+        <option value="">All cuisines</option>
+      </select>
+    </label>
+    <label>Rating
+      <select id="ratingFilter">
+        <option value="">Any rating</option>
+        <option value="4.5">4.5+ stars</option>
+        <option value="4">4+ stars</option>
+        <option value="3">3+ stars</option>
+      </select>
+    </label>
+    <label>Location
+      <select id="locationFilter">
+        <option value="">All locations</option>
+      </select>
+    </label>
+    <button class="btn ghost" id="clearFilters" type="button">Clear filters</button>
+  </div>
+  <p class="result-count" id="resultCount" role="status" aria-live="polite"></p>
+  <div class="grid" id="results" aria-live="polite"></div>
+</main>
+<script src="shared.js"></script><script src="home.js"></script></body></html>

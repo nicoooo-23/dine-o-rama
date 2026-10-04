@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Dine-O-Rama</title><link rel="icon" href="logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="">Dine-O-Rama</a>
+    <div>
+      <a class="link" href="index.html#home">Home</a>
+      <a class="link" href="index.html#restaurants">Restaurants</a>
+      <a class="link on" href="admin.html">Admin</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <div id="msg" role="status"></div>
+
+  <!-- Login (shown when not signed in) -->
+  <section class="login" id="loginBox" hidden>
+    <h2>Admin login</h2>
+    <form id="loginForm"><label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <button class="btn" type="submit">Log in</button></form>
+  </section>
+
+  <!-- Manager (shown when signed in) -->
+  <section id="manager" hidden>
+    <div class="bar"><h2>Manage restaurants</h2>
+      <div><button class="btn" id="addBtn">Add restaurant</button> <button class="btn ghost" id="logout">Log out</button></div></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>Name</th><th>Cuisine</th><th>Address</th><th>Rating</th><th>Contact</th><th>Actions</th></tr></thead>
+      <tbody id="rows"></tbody></table></div>
+  </section>
+
+  <dialog id="dlg"><form method="dialog" id="form">
+    <h3 id="dlgTitle">Add restaurant</h3>
+    <label for="name">Name</label><input id="name" maxlength="80" required>
+    <label for="cuisine">Cuisine</label><input id="cuisine" maxlength="50">
+    <label for="address">Address</label><input id="address" maxlength="120">
+    <label for="rating">Rating (0 to 5)</label><input id="rating" type="number" min="0" max="5" step="0.1" required>
+    <label for="contact">Contact</label><input id="contact" maxlength="20">
+    <p><button class="btn" type="submit">Save</button> <button class="btn ghost" type="button" id="cancel">Cancel</button></p>
+  </form></dialog>
+</main>
+<script src="shared.js"></script><script src="admin.js"></script></body></html>

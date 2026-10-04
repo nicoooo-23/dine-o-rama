@@ -1,0 +1,242 @@
+[
+  {
+    "restaurant_id": 1,
+    "name": "Kapampangan Grill",
+    "cuisine": "Filipino",
+    "address": "Angeles City",
+    "rating": 4.5,
+    "contact": "09171234567"
+  },
+  {
+    "restaurant_id": 2,
+    "name": "Spice Route",
+    "cuisine": "Indian",
+    "address": "Clark",
+    "rating": 4.3,
+    "contact": "09171234568"
+  },
+  {
+    "restaurant_id": 3,
+    "name": "Pasta House",
+    "cuisine": "Italian",
+    "address": "San Fernando",
+    "rating": 4.1,
+    "contact": "09171234569"
+  },
+  {
+    "restaurant_id": 4,
+    "name": "Tokyo Bites",
+    "cuisine": "Japanese",
+    "address": "Angeles City",
+    "rating": 4.7,
+    "contact": "09171234570"
+  },
+  {
+    "restaurant_id": 5,
+    "name": "Dragon Wok",
+    "cuisine": "Chinese",
+    "address": "Mabalacat",
+    "rating": 4.2,
+    "contact": "09171234571"
+  },
+  {
+    "restaurant_id": 6,
+    "name": "Burger Republic",
+    "cuisine": "American",
+    "address": "Clark",
+    "rating": 4.0,
+    "contact": "09171234572"
+  },
+  {
+    "restaurant_id": 7,
+    "name": "Seoul Kitchen",
+    "cuisine": "Korean",
+    "address": "Angeles City",
+    "rating": 4.6,
+    "contact": "09171234573"
+  },
+  {
+    "restaurant_id": 8,
+    "name": "Taco Fiesta",
+    "cuisine": "Mexican",
+    "address": "San Fernando",
+    "rating": 4.1,
+    "contact": "09171234574"
+  },
+  {
+    "restaurant_id": 9,
+    "name": "Ocean Catch",
+    "cuisine": "Seafood",
+    "address": "Mabalacat",
+    "rating": 4.4,
+    "contact": "09171234575"
+  },
+  {
+    "restaurant_id": 10,
+    "name": "Green Garden",
+    "cuisine": "Vegetarian",
+    "address": "Angeles City",
+    "rating": 4.3,
+    "contact": "09171234576"
+  },
+  {
+    "restaurant_id": 11,
+    "name": "Coffee Corner",
+    "cuisine": "Cafe",
+    "address": "Clark",
+    "rating": 4.2,
+    "contact": "09171234577"
+  },
+  {
+    "restaurant_id": 12,
+    "name": "Pizza Haven",
+    "cuisine": "Italian",
+    "address": "San Fernando",
+    "rating": 4.5,
+    "contact": "09171234578"
+  },
+  {
+    "restaurant_id": 13,
+    "name": "Sushi Wave",
+    "cuisine": "Japanese",
+    "address": "Angeles City",
+    "rating": 4.8,
+    "contact": "09171234579"
+  },
+  {
+    "restaurant_id": 14,
+    "name": "BBQ Nation",
+    "cuisine": "Filipino",
+    "address": "Mabalacat",
+    "rating": 4.4,
+    "contact": "09171234580"
+  },
+  {
+    "restaurant_id": 15,
+    "name": "Wok Express",
+    "cuisine": "Chinese",
+    "address": "Clark",
+    "rating": 4.1,
+    "contact": "09171234581"
+  },
+  {
+    "restaurant_id": 16,
+    "name": "Burger Shack",
+    "cuisine": "American",
+    "address": "Angeles City",
+    "rating": 4.0,
+    "contact": "09171234582"
+  },
+  {
+    "restaurant_id": 17,
+    "name": "Kimchi Palace",
+    "cuisine": "Korean",
+    "address": "San Fernando",
+    "rating": 4.7,
+    "contact": "09171234583"
+  },
+  {
+    "restaurant_id": 18,
+    "name": "Fiesta Mexicana",
+    "cuisine": "Mexican",
+    "address": "Clark",
+    "rating": 4.2,
+    "contact": "09171234584"
+  },
+  {
+    "restaurant_id": 19,
+    "name": "Harbor Seafood",
+    "cuisine": "Seafood",
+    "address": "Angeles City",
+    "rating": 4.6,
+    "contact": "09171234585"
+  },
+  {
+    "restaurant_id": 20,
+    "name": "Fresh Bowl",
+    "cuisine": "Vegetarian",
+    "address": "Mabalacat",
+    "rating": 4.1,
+    "contact": "09171234586"
+  },
+  {
+    "restaurant_id": 21,
+    "name": "Morning Brew",
+    "cuisine": "Cafe",
+    "address": "San Fernando",
+    "rating": 4.3,
+    "contact": "09171234587"
+  },
+  {
+    "restaurant_id": 22,
+    "name": "Little Italy",
+    "cuisine": "Italian",
+    "address": "Clark",
+    "rating": 4.4,
+    "contact": "09171234588"
+  },
+  {
+    "restaurant_id": 23,
+    "name": "Ramen House",
+    "cuisine": "Japanese",
+    "address": "Angeles City",
+    "rating": 4.5,
+    "contact": "09171234589"
+  },
+  {
+    "restaurant_id": 24,
+    "name": "Lutong Bahay",
+    "cuisine": "Filipino",
+    "address": "San Fernando",
+    "rating": 4.2,
+    "contact": "09171234590"
+  },
+  {
+    "restaurant_id": 25,
+    "name": "Golden Dragon",
+    "cuisine": "Chinese",
+    "address": "Clark",
+    "rating": 4.4,
+    "contact": "09171234591"
+  },
+  {
+    "restaurant_id": 26,
+    "name": "Smokehouse Grill",
+    "cuisine": "American",
+    "address": "Mabalacat",
+    "rating": 4.1,
+    "contact": "09171234592"
+  },
+  {
+    "restaurant_id": 27,
+    "name": "Korean Table",
+    "cuisine": "Korean",
+    "address": "Angeles City",
+    "rating": 4.5,
+    "contact": "09171234593"
+  },
+  {
+    "restaurant_id": 28,
+    "name": "Casa Burrito",
+    "cuisine": "Mexican",
+    "address": "San Fernando",
+    "rating": 4.2,
+    "contact": "09171234594"
+  },
+  {
+    "restaurant_id": 29,
+    "name": "Blue Ocean Bistro",
+    "cuisine": "Seafood",
+    "address": "Clark",
+    "rating": 4.7,
+    "contact": "09171234595"
+  },
+  {
+    "restaurant_id": 30,
+    "name": "Healthy Harvest",
+    "cuisine": "Vegetarian",
+    "address": "Angeles City",
+    "rating": 4.3,
+    "contact": "09171234596"
+  }
+]
