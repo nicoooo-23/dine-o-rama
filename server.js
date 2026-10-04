@@ -7,6 +7,7 @@ const session = require('express-session');
 const rateLimit = require('express-rate-limit');
 const bcrypt = require('bcryptjs');
 const { MongoClient, ObjectId } = require('mongodb');
+const seedData = require('./seedData');
 
 if (!process.env.SESSION_SECRET || !process.env.ADMIN_PASSWORD_HASH) {
   console.error('Set SESSION_SECRET and ADMIN_PASSWORD_HASH in .env (see .env.example).');
@@ -120,6 +121,11 @@ app.delete('/api/restaurants/:id', requireAdmin, async (req, res) => {
 
 client.connect().then(() => {
   restaurants = client.db(process.env.DB_NAME || 'dbRestaurants').collection('restaurants');
+  // First run: if the collection is empty, insert the initial restaurants (no manual import needed)
+  return restaurants.countDocuments().then(async n => {
+    if (n === 0) { await restaurants.insertMany(seedData); console.log(`Seeded ${seedData.length} restaurants.`); }
+  });
+}).then(() => {
   const port = process.env.PORT || 3000;
   app.listen(port, () => console.log(`Dine-O-Rama running at http://localhost:${port}`));
 }).catch(e => { console.error('MongoDB connection failed:', e.message); process.exit(1); });
