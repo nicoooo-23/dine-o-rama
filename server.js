@@ -22,6 +22,26 @@ app.use(session({
   resave: false, saveUninitialized: false,
   cookie: { httpOnly: true, sameSite: 'strict', secure: process.env.NODE_ENV === 'production', maxAge: 1000 * 60 * 60 }
 }));
+
+// Log every request, with timing and status code. Log page visits separately.
+app.use((req, res, next) => {
+  const startedAt = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - startedAt;
+    if (req.path.startsWith('/api/')) {
+      console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} -> ${res.statusCode} (${duration}ms)`);
+      return;
+    }
+
+    if (req.method === 'GET') {
+      const pages = { '/': 'Home', '/index.html': 'Home', '/admin.html': 'Admin' };
+      if (pages[req.path]) {
+        console.log(`[${new Date().toISOString()}] Page visit: ${pages[req.path]} (${req.path}) -> ${res.statusCode}`);
+      }
+    }
+  });
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Block cross-site form posts: every write request must be JSON
