@@ -1,6 +1,9 @@
 /* Dine-O-Rama: pastel green theme, laid out like the ADF site */
 :root { --bar:#b9e6c9; --cream:#f6fbf0; --tint:#d3eedb; --green:#2f7a54; --deep:#1f5a3c; --ink:#22372c; --btn:#2f8f5f; --line:#bfe0cb; --pink:#f6b8c4; }
 * { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+}
 body { margin:0; font-family: 'Poppins', 'Segoe UI', sans-serif; color:var(--ink); background:var(--tint); line-height:1.6; }
 /* Top bar */
 nav { position:sticky; top:0; z-index:5; background:var(--bar); }
