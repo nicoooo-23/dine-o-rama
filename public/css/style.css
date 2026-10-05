@@ -4,7 +4,11 @@
 html {
   scroll-behavior: smooth;
 }
-body { margin:0; font-family: 'Poppins', 'Segoe UI', sans-serif; color:var(--ink); background:var(--tint); line-height:1.6; }
+body { min-height:100vh; margin:0; display:flex; flex-direction:column; font-family: 'Poppins', 'Segoe UI', sans-serif; color:var(--ink); background:var(--tint); line-height:1.6; }
+main { flex:1; }
+footer { padding:22px 24px; background:var(--bar); color:#2f8f5f; text-align:center; font-size:.78rem; letter-spacing:.02em; }
+footer.home-footer { background:var(--tint); color:var(--ink); }
+footer.site-footer { background:var(--bar); color:var(--ink); }
 /* Top bar */
 nav { position:sticky; top:0; z-index:5; background:var(--bar); }
 .navin { max-width:1200px; margin:0 auto; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
@@ -70,8 +74,8 @@ dialog label { display:block; margin-top:10px; font-weight:600; } dialog input {
 @media (max-width:800px) {
   .hero:not(.hero-home) { grid-template-columns:1fr; }
   .photo { order:-1; max-width:320px; }
-  .hero-home-intro { flex-direction:column; gap:20px; }
-  .hero-home .photo { width:min(240px,65vw); }
+  .hero-home-intro { width:100%; flex-direction:column; gap:20px; }
+  .hero-home .photo { width:min(320px,82vw); align-self:center; }
   .hero-home .hero-copy { order:1; }
   .hero-home .photo { order:0; }
   .hero-home p.lead { margin-right:0; margin-left:0; }
