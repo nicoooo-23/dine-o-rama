@@ -13,14 +13,30 @@
 <body>
 <nav>
   <div class="navin">
-    <a class="brand" href="index.html"><img src="images/dino.png" alt="">Dine-O-Rama</a>
-    <div>
+
+    <!-- Logo / Brand -->
+    <a class="brand" href="index.html">
+      <img src="images/dino.png" alt="Dine-O-Rama logo">
+      <span>Dine-O-Rama</span>
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
       <a class="link on" href="index.html">Home</a>
       <a class="link" href="restaurants.html">Restaurants</a>
       <a class="link" href="admin.html">Admin</a>
     </div>
+
   </div>
 </nav>
+
 <main class="herowrap" id="home"><section class="hero hero-home">
   <div class="hero-home-intro">
     <div class="hero-copy">

@@ -12,15 +12,30 @@
   </head>
   <body>
     <nav>
-      <div class="navin">
-        <a class="brand" href="index.html"><img src="images/dino.png" alt="">Dine-O-Rama</a>
-        <div>
-          <a class="link" href="index.html">Home</a>
-          <a class="link on" href="restaurants.html">Restaurants</a>
-          <a class="link" href="admin.html">Admin</a>
-        </div>
-      </div>
-    </nav>
+  <div class="navin">
+
+    <!-- Logo / Brand -->
+    <a class="brand" href="index.html">
+      <img src="images/dino.png" alt="Dine-O-Rama logo">
+      <span>Dine-O-Rama</span>
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+      <a class="link " href="index.html">Home</a>
+      <a class="link on" href="restaurants.html">Restaurants</a>
+      <a class="link" href="admin.html">Admin</a>
+    </div>
+
+  </div>
+</nav>
     <main id="restaurants">
       <h1>Explore our restaurants</h1>
       <form class="search restaurant-search" id="searchForm" action="restaurants.html" method="get" role="search">
