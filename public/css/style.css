@@ -15,12 +15,18 @@ nav a.link:hover, nav a.link.on { color:var(--green); border-bottom-color:var(--
 a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid var(--btn); outline-offset:2px; }
 /* Hero */
 .herowrap { background:var(--cream); border-radius:0 0 50% 50% / 0 0 110px 110px; padding:56px 24px 110px; }
+main.herowrap { max-width:none; margin:0; }
 .hero { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; }
+.hero-home { max-width:900px; display:flex; flex-direction:column; gap:24px; align-items:flex-start; text-align:left; }
+.hero-home-intro { display:flex; justify-content:flex-start; align-items:center; gap:32px; }
+.hero-home .hero-copy { max-width:520px; }
 .eyebrow { margin:0 0 6px; font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--green); }
 .hero h1 { margin:0 0 14px; font-size:clamp(2.6rem,6vw,4.6rem); line-height:1.05; font-weight:800; color:var(--green); }
 .tagline { margin:0 0 6px; font-size:1.15rem; font-weight:500; color:var(--green); }
 .hero p.lead { margin:0 0 22px; max-width:420px; }
 .search { display:flex; gap:8px; max-width:460px; }
+.home-search { width:min(100%,600px); max-width:none; }
+.restaurant-search { margin:0 0 24px; }
 input, button, select { font:inherit; }
 input { padding:11px 16px; border:2px solid var(--line); border-radius:999px; background:#fff; color:var(--ink); }
 .search input { flex:1; min-width:0; }
@@ -30,9 +36,11 @@ input { padding:11px 16px; border:2px solid var(--line); border-radius:999px; ba
 .btn.ghost { background:#fff; color:var(--green); border:2px solid var(--line); }
 .btn.sm { padding:6px 14px; font-size:.8rem; }
 .photo { background:var(--tint); border-radius:28px; aspect-ratio:4/3; display:grid; place-items:center; }
+.hero-home .photo { width:min(280px,35vw); aspect-ratio:1; }
 .photo img { width:62%; }
 /* Results */
 main { max-width:1100px; margin:0 auto; padding:20px 24px 60px; }
+main:not(.herowrap) h1 { color:var(--green); font-size:clamp(2rem,5vw,3rem); margin:0 0 16px; }
 main h2 { color:var(--green); font-size:1.9rem; margin:0 0 16px; }
 .filters { display:flex; align-items:end; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
 .filters label { display:grid; gap:4px; font-size:.85rem; font-weight:600; }
@@ -59,4 +67,13 @@ dialog { border:0; border-radius:24px; padding:24px; width:min(420px,92vw); back
 dialog::backdrop { background:rgba(31,90,60,.4); }
 dialog label { display:block; margin-top:10px; font-weight:600; } dialog input { width:100%; border-radius:14px; }
 [hidden] { display:none !important; }
-@media (max-width:800px) { .hero { grid-template-columns:1fr; } .photo { order:-1; max-width:320px; } nav a.link { margin-left:16px; } }
+@media (max-width:800px) {
+  .hero:not(.hero-home) { grid-template-columns:1fr; }
+  .photo { order:-1; max-width:320px; }
+  .hero-home-intro { flex-direction:column; gap:20px; }
+  .hero-home .photo { width:min(240px,65vw); }
+  .hero-home .hero-copy { order:1; }
+  .hero-home .photo { order:0; }
+  .hero-home p.lead { margin-right:0; margin-left:0; }
+  nav a.link { margin-left:16px; }
+}

@@ -1,4 +1,5 @@
 // Dine-O-Rama backend: Express + MongoDB. Public: view/search. Admin only: add/edit/delete.
+require('dns').setServers(['8.8.8.8', '1.1.1.1']);   // use public DNS for the Atlas SRV lookup
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
@@ -15,6 +16,7 @@ if (!process.env.SESSION_SECRET || !process.env.ADMIN_PASSWORD_HASH) {
 }
 
 const app = express();
+app.set('trust proxy', 1);   // needed behind Render's proxy (secure cookies, correct IPs for rate limiting)
 app.use(helmet());                          // secure HTTP headers (incl. Content-Security-Policy)
 app.use(express.json({ limit: '10kb' }));   // JSON bodies only, small size
 app.use(session({
@@ -35,7 +37,7 @@ app.use((req, res, next) => {
     }
 
     if (req.method === 'GET') {
-      const pages = { '/': 'Home', '/index.html': 'Home', '/admin.html': 'Admin' };
+      const pages = { '/': 'Home', '/index.html': 'Home', '/restaurants.html': 'Restaurants', '/admin.html': 'Admin' };
       if (pages[req.path]) {
         console.log(`[${new Date().toISOString()}] Page visit: ${pages[req.path]} (${req.path}) -> ${res.statusCode}`);
       }

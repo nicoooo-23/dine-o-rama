@@ -1,4 +1,4 @@
-// Homepage: public search and restaurant cards
+// Restaurant listing: public search and restaurant cards
 let restaurants = [];
 
 function search(q) {
@@ -38,7 +38,9 @@ async function loadRestaurants() {
   restaurants = data;
   populateFilterOptions($('cuisineFilter'), restaurants.map(r => r.cuisine));
   populateFilterOptions($('locationFilter'), restaurants.map(r => r.address));
-  search('');
+  const query = new URLSearchParams(window.location.search).get('q') || '';
+  $('q').value = query;
+  search(query);
 }
 
 $('searchForm').addEventListener('submit', e => { e.preventDefault(); search($('q').value.trim()); });
