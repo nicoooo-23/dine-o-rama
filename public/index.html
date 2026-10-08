@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
   </head>
 <body>
 <nav>
@@ -53,7 +56,59 @@
     <input name="q" type="search" maxlength="50" placeholder="Try Filipino, grill, Angeles..." aria-label="Search restaurants">
     <button class="btn" type="submit">Search</button>
   </form>
-  <a class="btn ghost" href="restaurants.html">Browse all restaurants</a>
 </section></main>
+
+<!-- WHY DINE-O-RAMA -->
+<section class="why-section" id="why-dine-orama">
+  <div class="section-heading">
+    <span class="section-tag">A LITTLE ABOUT US</span>
+    <h2>Why <span>Dine-O-Rama?</span></h2>
+    <p>
+      Good food, happy tummies, and new places to discover!
+      Finding your next favorite restaurant has never been easier.
+    </p>
+  </div>
+
+  <div class="why-grid">
+    <article class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-utensils"></i></div>
+      <h3>Something for Every Craving</h3>
+      <p>Discover Filipino favorites and international cuisines all in one place.</p>
+    </article>
+
+    <article class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <h3>Easy Restaurant Search</h3>
+      <p>Find restaurants by name, cuisine, or location in just a few clicks.</p>
+    </article>
+
+    <article class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-star"></i></div>
+      <h3>Discover Top-Rated Spots</h3>
+      <p>Explore restaurant ratings and find inspiration for your next meal.</p>
+    </article>
+  </div>
+</section>
+
+<!-- TOP 3 PICKS -->
+<section class="popular-section" id="popular-picks">
+  <div class="section-heading">
+    <span class="section-tag">FOODIE FAVORITES</span>
+    <h2>Our Top <span>3 Picks!</span></h2>
+    <p>Meet the highest-rated restaurants in our directory!</p>
+  </div>
+
+  <div class="popular-grid" id="popularGrid" aria-live="polite">
+    <p class="popular-message">Loading our top picks...</p>
+  </div>
+
+  <div class="popular-dots" id="popularDots" aria-label="Restaurant carousel pages"></div>
+
+  <div class="popular-action">
+    <a href="restaurants.html" class="btn">Explore All Restaurants</a>
+  </div>
+</section>
+
+
 <footer class="home-footer"><b>© ADDBASE. Gozum | Nengasca | Pepito | Rivera. All Rights Reserved.</b></footer>
 <script src="shared.js"></script></body></html>
