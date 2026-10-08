@@ -7,3 +7,6 @@ Needs Node.js 18+ and MongoDB with `dbRestaurants` (collection `restaurants`) im
 4. `npm start`  then open http://localhost:3000
 
 Public: homepage search. Admin (admin.html, password login): add, edit, delete.
+
+## Live Site on Render
+Site Link: https://dine-o-rama.onrender.com
