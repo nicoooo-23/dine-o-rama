@@ -13,7 +13,7 @@
       <div class="nav-links" :class="{ active: isOpen }">
         <a class="link" :class="{ on: $route.path === '/' }" @click.prevent="$router.push('/')">Home</a>
         <a class="link" :class="{ on: $route.path === '/restaurants' }" @click.prevent="$router.push('/restaurants')">Restaurants</a>
-        <a class="link" :class="{ on: $route.path === '/admin' }" @click.prevent="$router.push('/admin')">Admin</a>
+        <a class="link" :class="{ on: $route.path === '/terms' }" @click.prevent="$router.push('/terms')">Terms of Service</a>
       </div>
     </div>
   </nav>

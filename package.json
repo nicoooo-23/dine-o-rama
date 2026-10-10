@@ -4,7 +4,7 @@
   "description": "Dine-O-Rama: A Food Court Management System",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "npm run vue-build && node backend/server.js",
     "dev": "nodemon backend/server.js",
     "hash": "node backend/hash.js",
     "vue-dev": "vite",

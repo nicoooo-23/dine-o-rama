@@ -35,17 +35,16 @@ app.use((req, res, next) => {
       console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} -> ${res.statusCode} (${duration}ms)`);
       return;
     }
-
-    if (req.method === 'GET') {
-      const pages = { '/': 'Home', '/index.html': 'Home', '/restaurants.html': 'Restaurants', '/admin.html': 'Admin' };
-      if (pages[req.path]) {
-        console.log(`[${new Date().toISOString()}] Page visit: ${pages[req.path]} (${req.path}) -> ${res.statusCode}`);
-      }
-    }
   });
   next();
 });
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'dist')));
+
+// SPA fallback: send all non-API requests to index.html
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'Not found' });
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+});
 
 // Block cross-site form posts: every write request must be JSON
 app.use('/api', (req, res, next) =>
