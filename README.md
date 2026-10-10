@@ -58,7 +58,6 @@ This command builds the Vue frontend and starts the Express server on `http://lo
 
 ## Features
 - **Public**: Search and filter restaurants by cuisine, rating, and location.
-- **Admin**: Secure password-protected panel to add, edit, and delete restaurant listings (accessible via `/admin`).
 
 ## Live Site on Render
 Site Link: https://dine-o-rama.onrender.com
