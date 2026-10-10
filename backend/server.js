@@ -45,7 +45,7 @@ app.use((req, res, next) => {
   });
   next();
 });
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Block cross-site form posts: every write request must be JSON
 app.use('/api', (req, res, next) =>

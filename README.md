@@ -1,12 +1,57 @@
 # Dine-O-Rama: A Food Court Management System
-Needs Node.js 18+ and MongoDB with `dbRestaurants` (collection `restaurants`) imported.
 
-1. `npm install`
-2. `npm run hash -- "YourPassword123"`  (copy the printed hash)
-3. Copy `.env.example` to `.env`; paste the hash into ADMIN_PASSWORD_HASH and set SESSION_SECRET using `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`
-4. `npm start`  then open http://localhost:3000
+A modern food court directory with a Vue 3 frontend and an Express/MongoDB backend.
 
-Public: homepage search. Admin (admin.html, password login): add, edit, delete.
+## Requirements
+- Node.js 18+
+- MongoDB (the system will auto-seed the `restaurants` collection on first run)
+
+## Setup Instructions
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Environment
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Generate an admin password hash:
+   ```bash
+   npm run hash -- "YourPassword123"
+   ```
+3. Paste the printed hash into `ADMIN_PASSWORD_HASH` in your `.env` file.
+4. Set a `SESSION_SECRET` in `.env` (use any long random string).
+5. Ensure `MONGO_URI` and `DB_NAME` are correctly configured in `.env`.
+
+## Running the Project
+
+This project uses a split-development flow:
+
+### Backend (API)
+To start the Express server:
+```bash
+npm run dev
+```
+The API will be available at `http://localhost:3000`.
+
+### Frontend (Vue SPA)
+To start the Vue development server:
+```bash
+npm run vue-dev
+```
+The site will be available at `http://localhost:5173` (Vite's default).
+
+## Project Structure
+- `/backend`: Node.js/Express API logic.
+- `/src`: Vue 3 source code (Composition API).
+- `/public`: Static assets.
+
+## Features
+- **Public**: Search and filter restaurants by cuisine, rating, and location.
+- **Admin**: Secure password-protected panel to add, edit, and delete restaurant listings.
 
 ## Live Site on Render
 Site Link: https://dine-o-rama.onrender.com
