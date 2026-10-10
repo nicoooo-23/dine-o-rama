@@ -1,8 +1,8 @@
 // Dine-O-Rama backend: Express + MongoDB. Public: view/search. Admin only: add/edit/delete.
 require('dns').setServers(['8.8.8.8', '1.1.1.1']);   // use public DNS for the Atlas SRV lookup
-require('dotenv').config();
-const express = require('express');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+const express = require('express');
 const helmet = require('helmet');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit');
@@ -40,15 +40,9 @@ app.use((req, res, next) => {
 });
 app.use(express.static(path.join(__dirname, '..', 'dist')));
 
-// SPA fallback: send all non-API requests to index.html
-app.get('*', (req, res) => {
-  if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'Not found' });
-  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
-});
-
 // Block cross-site form posts: every write request must be JSON
 app.use('/api', (req, res, next) =>
-  req.method === 'GET' || req.is('application/json') ? next() : res.status(415).json({ error: 'JSON only.' }));
+  req.method === 'GET' || req.method === 'DELETE' || req.is('application/json') ? next() : res.status(415).json({ error: 'JSON only.' }));
 
 // Only logged-in admins may pass
 const requireAdmin = (req, res, next) =>
@@ -118,6 +112,12 @@ app.delete('/api/restaurants/:id', requireAdmin, async (req, res) => {
     const r = await restaurants.deleteOne({ _id: new ObjectId(req.params.id) });
     r.deletedCount ? res.json({ ok: true }) : res.status(404).json({ error: 'Not found.' });
   } catch { res.status(500).json({ error: 'Server error.' }); }
+});
+
+// SPA fallback: send all non-API requests to index.html
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'Not found' });
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
 client.connect().then(() => {
