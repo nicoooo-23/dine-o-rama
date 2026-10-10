@@ -16,7 +16,7 @@ nav { position:fixed; top:0; z-index:1000; background:var(--bar); width:100%; }
 .brand img { width:48px; height:48px; object-fit:contain; }
 /* Desktop Navigation */
 .nav-links { display:flex; align-items:center; gap:26px; min-width:0; }
-nav a.link { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; padding:6px 0; border-bottom:2px solid transparent; }
+nav a.link { cursor: pointer; color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; padding:6px 0; border-bottom:2px solid transparent; }
 nav a.link:hover, nav a.link.on { color:var(--green); border-bottom-color:var(--green); }
 /* Hamburger Button */
 .menu-toggle { display:none; width:44px; height:44px; padding:8px; border:none; border-radius:10px; background:transparent; cursor:pointer; flex-direction:column; justify-content:center; align-items:center; gap:5px; }

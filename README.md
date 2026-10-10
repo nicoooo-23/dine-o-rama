@@ -28,8 +28,8 @@ npm install
 
 ## Running the Project
 
-### Development Mode (Split)
-For a faster development experience with Hot Module Replacement (HMR), run both the backend and frontend separately:
+### Local Development (Split Mode)
+For a faster development experience with Hot Module Replacement (HMR), run the backend and frontend separately in two different terminals:
 
 1. **Start Backend**: 
    ```bash
@@ -43,12 +43,20 @@ For a faster development experience with Hot Module Replacement (HMR), run both 
    ```
    (Runs on `http://localhost:5173`)
 
-### Production Mode (Unified)
-To simulate the Render deployment or run as a single service:
+### Local Production Test (Unified)
+To simulate the Render deployment locally:
 ```bash
 npm start
 ```
 This command builds the Vue frontend and starts the Express server on `http://localhost:3000`.
+
+## Deployment (Render)
+
+To deploy this project as a single Web Service on Render, use the following configuration:
+
+- **Build Command**: `npm install && npm run vue-build`
+- **Start Command**: `node backend/server.js`
+- **Environment Variables**: Ensure `MONGO_URI`, `SESSION_SECRET`, and `ADMIN_PASSWORD_HASH` are set in the Render dashboard.
 
 ## Project Structure
 - `/backend`: Node.js/Express API logic.
